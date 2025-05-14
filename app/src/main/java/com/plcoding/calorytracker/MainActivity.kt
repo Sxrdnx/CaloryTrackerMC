@@ -1,4 +1,4 @@
-package com.plcoding.calorytracker
+package com.sxrdnx.calorytracker
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,12 +9,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.plcoding.calorytracker.ui.theme.CaloryTrackerTheme
+import com.sxrdnx.onboarding_presentation.welcome.WelcomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             CaloryTrackerTheme {
+                WelcomeScreen()
 
             }
         }

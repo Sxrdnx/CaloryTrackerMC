@@ -28,7 +28,7 @@ android {
         }
     }
     compileOptions {
-        coreLibraryDesugaringEnabled true
+        //coreLibraryDesugaringEnabled true
 
         sourceCompatibility JavaVersion.VERSION_18
         targetCompatibility JavaVersion.VERSION_18
@@ -48,6 +48,7 @@ dependencies {
     implementation Compose.navigation
     implementation Compose.viewModelCompose
     implementation Compose.activityCompose
+
 
     kapt DaggerHilt.hiltCompiler
     implementation DaggerHilt.hiltAndroid
