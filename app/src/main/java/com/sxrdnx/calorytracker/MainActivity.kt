@@ -15,6 +15,7 @@ import com.sxrdnx.calorytracker.ui.theme.CaloryTrackerTheme
 import com.sxrdnx.core.navigation.Route
 import com.sxrdnx.onboarding_presentation.age.AgeScreen
 import com.sxrdnx.onboarding_presentation.gender.GenderScreen
+import com.sxrdnx.onboarding_presentation.height.HeightScreen
 import com.sxrdnx.onboarding_presentation.welcome.WelcomeScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -45,7 +46,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable(Route.HEIGHT){
-
+                            HeightScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
                         }
 
                         composable(Route.WEIGHT){
