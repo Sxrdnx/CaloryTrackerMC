@@ -16,6 +16,7 @@ import com.sxrdnx.core.navigation.Route
 import com.sxrdnx.onboarding_presentation.age.AgeScreen
 import com.sxrdnx.onboarding_presentation.gender.GenderScreen
 import com.sxrdnx.onboarding_presentation.height.HeightScreen
+import com.sxrdnx.onboarding_presentation.weight.WeightScreen
 import com.sxrdnx.onboarding_presentation.welcome.WelcomeScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -50,6 +51,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable(Route.WEIGHT){
+                            WeightScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
 
                         }
 
