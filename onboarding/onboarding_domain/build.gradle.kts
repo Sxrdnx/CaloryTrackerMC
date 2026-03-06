@@ -1,7 +1,15 @@
-apply {
-    from("$rootDir/base-module.gradle")
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
-dependencies {
-    "implementation"(project(Modules.core))
+
+apply(from = "$rootDir/base-module.gradle")
+
+android {
+    namespace = "com.sxrdnx.onboarding_domain"
+}
+
+dependencies{
+    implementation(project(Modules.core))
 }

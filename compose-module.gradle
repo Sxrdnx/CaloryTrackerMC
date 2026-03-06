@@ -28,13 +28,13 @@ android {
         }
     }
     compileOptions {
-        coreLibraryDesugaringEnabled true
+        //coreLibraryDesugaringEnabled true
 
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_18
+        targetCompatibility JavaVersion.VERSION_18
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '18'
     }
 }
 
@@ -48,6 +48,7 @@ dependencies {
     implementation Compose.navigation
     implementation Compose.viewModelCompose
     implementation Compose.activityCompose
+
 
     kapt DaggerHilt.hiltCompiler
     implementation DaggerHilt.hiltAndroid

@@ -1,11 +1,17 @@
-apply {
-    from("$rootDir/compose-module.gradle")
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+}
+apply(from = "$rootDir/compose-module.gradle")
+
+android {
+    namespace = "com.sxrdnx.tracker_precentation"
 }
 
-dependencies {
-    "implementation"(project(Modules.core))
-    "implementation"(project(Modules.coreUi))
-    "implementation"(project(Modules.trackerDomain))
+dependencies{
+    implementation(project(Modules.core))
+    implementation(project(Modules.trackerDomain))
+    implementation (project(Modules.coreUi))
 
-    "implementation"(Coil.coilCompose)
+    implementation(Coil.coilCompose)
 }

@@ -1,9 +1,18 @@
-apply {
-    from("$rootDir/compose-module.gradle")
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
-dependencies {
-    "implementation"(project(Modules.core))
-    "implementation"(project(Modules.coreUi))
-    "implementation"(project(Modules.onboardingDomain))
+
+apply(from = "$rootDir/compose-module.gradle")
+
+android {
+    namespace = "com.sxrdnx.onboarding_presentation"
+}
+
+dependencies{
+    implementation(project(Modules.core))
+    implementation(project(Modules.onboardingDomain))
+    implementation (project(Modules.coreUi))
+
 }

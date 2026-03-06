@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">CaloryTrackerPrep</string>
-    <string name="error_unknown">Unknown error</string>
+    <string name="app_name" translatable="false">CaloryTrackerPrep</string>
     <string name="welcome_text">Hello! Let\'s find out more about you :)</string>
     <string name="lets_go">Let\'s go</string>
     <string name="whats_your_gender">What is your gender?</string>
@@ -58,4 +57,5 @@
     <string name="error_not_100_percent">The values must add up to 100%</string>
     <string name="your_goal">Your goal:</string>
     <string name="delete">Delete</string>
+    <string name="error_unknown">Unknown error</string>
 </resources>
