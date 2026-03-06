@@ -16,6 +16,7 @@ import com.sxrdnx.core.navigation.Route
 import com.sxrdnx.onboarding_presentation.activity.ActivityScreen
 import com.sxrdnx.onboarding_presentation.age.AgeScreen
 import com.sxrdnx.onboarding_presentation.gender.GenderScreen
+import com.sxrdnx.onboarding_presentation.goal.GoalScreen
 import com.sxrdnx.onboarding_presentation.height.HeightScreen
 import com.sxrdnx.onboarding_presentation.weight.WeightScreen
 import com.sxrdnx.onboarding_presentation.welcome.WelcomeScreen
@@ -62,6 +63,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable(Route.GOAL){
+                            GoalScreen(onNavigate = navController::navigate)
 
                         }
 
