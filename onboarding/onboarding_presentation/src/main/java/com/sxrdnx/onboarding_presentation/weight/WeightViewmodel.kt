@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sxrdnx.core.domain.preferences.Preferences
-import com.sxrdnx.core.domain.use_case.FilterOutDigits
 import com.sxrdnx.core.util.UiEvent
 import com.sxrdnx.core.util.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
