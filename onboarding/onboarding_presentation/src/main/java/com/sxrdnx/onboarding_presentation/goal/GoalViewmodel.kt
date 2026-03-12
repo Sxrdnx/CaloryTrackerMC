@@ -15,7 +15,6 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-import com.sxrdnx.core.domain.model.ActivityLevel
 import com.sxrdnx.core.domain.model.GoalType
 
 @HiltViewModel
