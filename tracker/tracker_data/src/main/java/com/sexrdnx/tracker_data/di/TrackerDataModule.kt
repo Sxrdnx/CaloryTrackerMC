@@ -2,9 +2,10 @@ package com.sexrdnx.tracker_data.di
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.sexrdnx.tracker_data.local.TrackerDatabase
 import com.sexrdnx.tracker_data.remote.OpenFoodApi
+import com.sexrdnx.tracker_data.repository.TrackerRepositoryImp
+import com.sxrdnx.tracker_domain.repository.TrackerRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,7 +34,7 @@ object TrackerDataModule {
 
     @Provides
     @Singleton
-    fun provideOpenFoodApi(client: OkHttpClient){
+    fun provideOpenFoodApi(client: OkHttpClient):OpenFoodApi{
         return Retrofit.Builder()
             .baseUrl(OpenFoodApi.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create())
@@ -46,6 +47,13 @@ object TrackerDataModule {
     @Singleton
     fun provideTrackerFoodDatabase(app: Application):TrackerDatabase{
         return Room.databaseBuilder(app, TrackerDatabase::class.java, "tracker_db").build()
+    }
+    @Provides
+    @Singleton
+    fun provideTrackerRepository(
+        api:OpenFoodApi,
+        db: TrackerDatabase):TrackerRepository{
+        return TrackerRepositoryImp(db.dao,api)
     }
 
 }

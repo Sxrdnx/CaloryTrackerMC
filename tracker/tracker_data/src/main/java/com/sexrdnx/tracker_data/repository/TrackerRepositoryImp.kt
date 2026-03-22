@@ -1,0 +1,58 @@
+package com.sexrdnx.tracker_data.repository
+
+import com.sexrdnx.tracker_data.local.TrackerDao
+import com.sexrdnx.tracker_data.mapper.toTrackableFood
+import com.sexrdnx.tracker_data.mapper.toTrackedFood
+import com.sexrdnx.tracker_data.mapper.toTrackedFoodEntity
+import com.sexrdnx.tracker_data.remote.OpenFoodApi
+import com.sxrdnx.tracker_domain.model.TrackableFood
+import com.sxrdnx.tracker_domain.model.TrackedFood
+import com.sxrdnx.tracker_domain.repository.TrackerRepository
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.mapNotNull
+import java.lang.Exception
+import java.time.LocalDate
+
+class TrackerRepositoryImp(
+    private val dao: TrackerDao,
+    private val api: OpenFoodApi
+): TrackerRepository {
+    override suspend fun searchFood(
+        query: String,
+        page: Int,
+        pageSize: Int
+    ): Result<List<TrackableFood>> {
+       return try {
+           val searchDto = api.searchFood(
+               query = query,
+               page = page,
+               pageSize = pageSize
+           )
+           Result.success(searchDto.products.mapNotNull { it.toTrackableFood() })
+        }catch (e:Exception){
+            e.printStackTrace()
+            Result.failure(e)
+        }
+    }
+
+    override suspend fun insertTrackedFood(food: TrackedFood) {
+       dao.insertTrackerFood(food.toTrackedFoodEntity())
+    }
+
+    override suspend fun deleteTrackedFood(food: TrackedFood) {
+        dao.deleteTrackerFood(food.toTrackedFoodEntity())
+    }
+
+    override suspend fun getFoodForDate(localDate: LocalDate): Flow<List<TrackedFood>> {
+
+        return dao.getFoodsForDate(
+            day = localDate.dayOfMonth,
+            month = localDate.monthValue,
+            year = localDate.year
+        ).mapNotNull { entity ->
+            entity.map {
+                it.toTrackedFood()
+            }
+        }
+    }
+}
