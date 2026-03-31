@@ -1,5 +1,6 @@
-package com.sxrdnx.onboarding_domain.use_case
+package com.sxrdnx.onboarding_domain.di
 
+import com.sxrdnx.onboarding_domain.use_case.ValidateNutrients
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,7 +13,7 @@ object OnboardingDomainModule {
 
     @Provides
     @ViewModelScoped
-    fun provideValidateNutrientsUseCase():ValidateNutrients{
+    fun provideValidateNutrientsUseCase(): ValidateNutrients {
         return ValidateNutrients()
     }
 }

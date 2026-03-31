@@ -1,0 +1,20 @@
+package com.sxrdnx.tracker_domain.use_case
+
+import com.sxrdnx.tracker_domain.model.TrackableFood
+import com.sxrdnx.tracker_domain.repository.TrackerRepository
+
+class SearchFood(
+    private val repository: TrackerRepository
+) {
+  suspend operator fun invoke (
+        query:String,
+        page: Int,
+        pageZise: Int = 40 ): Result<List<TrackableFood>> {
+        if (query.isBlank()){
+            return Result.success(emptyList())
+        }
+        return repository.searchFood(query.trim(),page,pageZise)
+
+    }
+
+}
