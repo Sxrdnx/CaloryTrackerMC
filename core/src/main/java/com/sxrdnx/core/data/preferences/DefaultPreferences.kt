@@ -90,4 +90,14 @@ class DefaultPreferences(
         )
 
     }
+
+    override fun saveShouldShowOnboarding(shouldShow: Boolean) {
+        sharedPref.edit()
+            .putBoolean(Preferences.KEY_SHOULD_SHOW_ONBOARDING,shouldShow)
+            .apply()
+    }
+
+    override fun loadShouldShowOnboardin(): Boolean {
+        return sharedPref.getBoolean(Preferences.KEY_SHOULD_SHOW_ONBOARDING,true)
+    }
 }

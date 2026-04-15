@@ -1,6 +1,6 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.auto.value:auto-value-annotations:1.8.1" type="java-imported" external-system-id="GRADLE">
-    <properties groupId="com.google.auto.value" artifactId="auto-value-annotations" version="1.8.1" />
+    <properties groupId="com.google.auto.value" artifactId="auto-value-annotations" version="1.8.1" baseVersion="1.8.1" />
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.auto.value/auto-value-annotations/1.8.1/174878f9cc9cbacb8b464d774afb2ccf938f257b/auto-value-annotations-1.8.1.jar!/" />
     </CLASSES>
