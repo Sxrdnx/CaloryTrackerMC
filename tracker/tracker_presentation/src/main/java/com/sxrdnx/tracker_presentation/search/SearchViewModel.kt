@@ -13,10 +13,11 @@ import kotlinx.coroutines.channels.Channel
 import com.sxrdnx.core.util.UiEvent
 import com.sxrdnx.core.util.UiText
 import com.sxrdnx.core.R
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-
+@HiltViewModel
 class SearchViewModel @Inject constructor(
     private val trackerUseCases: TrackerUseCases,
     private val filterOutDigits: FilterOutDigits
@@ -112,8 +113,5 @@ class SearchViewModel @Inject constructor(
 
        }
     }
-
-
-
 
 }
