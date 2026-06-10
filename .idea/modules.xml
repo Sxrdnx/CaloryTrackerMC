@@ -8,7 +8,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CaloryTracker.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/CaloryTracker.buildSrc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CaloryTracker.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/CaloryTracker.buildSrc.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CaloryTracker.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/CaloryTracker.buildSrc.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/CaloryTracker.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/CaloryTracker.core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/CaloryTracker.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/CaloryTracker.core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/CaloryTracker.core.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/CaloryTracker.core.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/onboarding/CaloryTracker.onboarding.iml" filepath="$PROJECT_DIR$/.idea/modules/onboarding/CaloryTracker.onboarding.iml" />
@@ -16,7 +15,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/onboarding/onboarding_presentation/CaloryTracker.onboarding.onboarding_presentation.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/onboarding/onboarding_presentation/CaloryTracker.onboarding.onboarding_presentation.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tracker/CaloryTracker.tracker.iml" filepath="$PROJECT_DIR$/.idea/modules/tracker/CaloryTracker.tracker.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tracker/tracker_data/CaloryTracker.tracker.tracker_data.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tracker/tracker_data/CaloryTracker.tracker.tracker_data.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tracker/tracker_domain/CaloryTracker.tracker.tracker_domain.iml" filepath="$PROJECT_DIR$/.idea/modules/tracker/tracker_domain/CaloryTracker.tracker.tracker_domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tracker/tracker_domain/CaloryTracker.tracker.tracker_domain.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tracker/tracker_domain/CaloryTracker.tracker.tracker_domain.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tracker/tracker_domain/CaloryTracker.tracker.tracker_domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tracker/tracker_domain/CaloryTracker.tracker.tracker_domain.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tracker/tracker_domain/CaloryTracker.tracker.tracker_domain.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tracker/tracker_domain/CaloryTracker.tracker.tracker_domain.unitTest.iml" />
