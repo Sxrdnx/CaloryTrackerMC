@@ -1,5 +1,6 @@
 package com.sexrdnx.tracker_data.repository
 
+import android.util.Log
 import com.sexrdnx.tracker_data.local.TrackerDao
 import com.sexrdnx.tracker_data.mapper.toTrackableFood
 import com.sexrdnx.tracker_data.mapper.toTrackedFood
@@ -28,7 +29,10 @@ class TrackerRepositoryImp(
                page = page,
                pageSize = pageSize
            )
-           Result.success(searchDto.products.mapNotNull { it.toTrackableFood() })
+           Result.success(searchDto.products.mapNotNull {
+            //   Log.d("GETTRACKABLE",it.toString() )
+                  it.toTrackableFood()
+           })
         }catch (e:Exception){
             e.printStackTrace()
             Result.failure(e)

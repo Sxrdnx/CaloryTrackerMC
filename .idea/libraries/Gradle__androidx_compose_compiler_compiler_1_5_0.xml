@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.compose.compiler:compiler:1.5.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="androidx.compose.compiler" artifactId="compiler" version="1.5.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.compose.compiler/compiler/1.5.0/b5977db0fa52ba01530760738749c2b9ac72d853/compiler-1.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.compose.compiler/compiler/1.5.0/2ad14aed781c4a73ed4dbb421966d408a0a06686/compiler-1.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
@@ -14,6 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.sxrdnx.calorytracker.navigation.navigate
 import com.sxrdnx.calorytracker.ui.theme.CaloryTrackerTheme
+import com.sxrdnx.core.domain.preferences.Preferences
 import com.sxrdnx.core.navigation.Route
 import com.sxrdnx.onboarding_presentation.activity.ActivityScreen
 import com.sxrdnx.onboarding_presentation.age.AgeScreen
@@ -26,11 +28,17 @@ import com.sxrdnx.onboarding_presentation.welcome.WelcomeScreen
 import com.sxrdnx.tracker_presentation.search.SearchScreen
 import com.sxrdnx.tracker_presentation.tracker_overview.TrackerOverviewScreen
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var preferences: Preferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val shouldShowOnboarding = preferences.loadShouldShowOnboardin()
         setContent {
             CaloryTrackerTheme {
                 val navController = rememberNavController()
@@ -40,7 +48,10 @@ class MainActivity : ComponentActivity() {
                     scaffoldState = scaffoldState
                 ) { it ->
                     it
-                    NavHost(navController = navController, startDestination = Route.WELCOME) {
+                    NavHost(
+                        navController = navController,
+                        startDestination = if (shouldShowOnboarding) Route.WELCOME else Route.TRACKER_OVERVIEW
+                    ) {
                         composable(Route.WELCOME){
                             WelcomeScreen(onNavigate = navController::navigate)
                         }
