@@ -1,5 +1,6 @@
 package com.sxrdnx.tracker_presentation.tracker_overview
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +18,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.core_ui.LocalSpacing
 import com.sxrdnx.core.util.UiEvent
 import com.sxrdnx.core.R
+import com.sxrdnx.core.util.DebugNames
 import com.sxrdnx.tracker_presentation.tracker_overview.components.AddButton
 import com.sxrdnx.tracker_presentation.tracker_overview.components.DaySelector
 import com.sxrdnx.tracker_presentation.tracker_overview.components.ExpandableMeal

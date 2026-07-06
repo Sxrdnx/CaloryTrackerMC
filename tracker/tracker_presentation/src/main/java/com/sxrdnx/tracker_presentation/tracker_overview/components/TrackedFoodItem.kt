@@ -8,8 +8,10 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
@@ -54,7 +56,7 @@ fun TrackedFoodItem(
             )
             .background(MaterialTheme.colors.surface)
             .padding(end = spacing.spaceMedium)
-            .height(100.dp),
+            ,
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -70,7 +72,7 @@ fun TrackedFoodItem(
           error = painterResource(id = R.drawable.ic_burger),
           fallback = painterResource(id = R.drawable.ic_burger),
           modifier = Modifier
-              .fillMaxHeight()
+              .size(100.dp)
               .aspectRatio(1f)
               .clip(
                   RoundedCornerShape(
@@ -88,30 +90,34 @@ fun TrackedFoodItem(
                 text = trackedFood.name,
                 style = MaterialTheme.typography.body1,
                 overflow =  TextOverflow.Ellipsis,
-                maxLines = 2
+                maxLines = 2,
             )
-            Spacer(modifier = Modifier.width(spacing.spaceMedium))
+            Spacer(modifier = Modifier.width(spacing.spaceSmall))
+            Text(
+                text = stringResource(
+                    id = R.string.nutrient_info,
+                    trackedFood.amount,
+                    trackedFood.calories
+                ),
+                style = MaterialTheme.typography.body2
+            )
+
 
             Column(
-                modifier = Modifier.fillMaxHeight(),
-                verticalArrangement =  Arrangement.Center
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .fillMaxWidth()
             ){
-                Icon(imageVector = Icons.Default.Close,
-                    contentDescription = stringResource(id = R.string.delete),
-                    modifier = Modifier
-                        .align(Alignment.End)
-                        .clickable { onDeleteClick() }
-                    )
+
                 Spacer(modifier = Modifier.height(spacing.spaceExctraSmall))
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ){
+                Row{
                     NutrientInfo(
                         name = stringResource(id = R.string.carbs) ,
                         amount = trackedFood.carbs ,
                         unit = stringResource(id = R.string.grams),
                         amountTextSize = 16.sp,
-                        unitTextSize = 21.sp,
+                        unitTextSize = 12.sp,
+                        modifier = Modifier.weight(1f),
                         nameTextStyle = MaterialTheme.typography.body2
                         )
 
@@ -121,7 +127,8 @@ fun TrackedFoodItem(
                         amount = trackedFood.protein,
                         unit = stringResource(id = R.string.grams),
                         amountTextSize = 16.sp,
-                        unitTextSize = 21.sp,
+                        unitTextSize = 12.sp,
+                        modifier = Modifier.weight(1f),
                         nameTextStyle = MaterialTheme.typography.body2
                     )
 
@@ -131,11 +138,20 @@ fun TrackedFoodItem(
                         amount = trackedFood.fat,
                         unit = stringResource(id = R.string.grams),
                         amountTextSize = 16.sp,
-                        unitTextSize = 21.sp,
+                        unitTextSize = 12.sp,
+                        modifier = Modifier.weight(1f),
                         nameTextStyle = MaterialTheme.typography.body2
                     )
                 }
             }
         }
+
+        Icon(imageVector = Icons.Default.Close,
+            contentDescription = stringResource(id = R.string.delete),
+            modifier = Modifier
+                .align(Alignment.Top)
+                .padding(top = 3.dp, start = 3.dp )
+                .clickable { onDeleteClick() }
+        )
     }
 }

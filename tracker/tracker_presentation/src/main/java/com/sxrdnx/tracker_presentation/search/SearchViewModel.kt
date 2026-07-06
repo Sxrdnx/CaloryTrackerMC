@@ -58,7 +58,7 @@ class SearchViewModel @Inject constructor(
             }
             is SearchEvent.OnSearchFocusChange -> {
                 state =state.copy(
-                    isHintVisible =  event.isFocused && state.query.isBlank()
+                    isHintVisible =  !event.isFocused && state.query.isBlank()
                 )
             }
             is SearchEvent.OnTrackFoodClick ->{

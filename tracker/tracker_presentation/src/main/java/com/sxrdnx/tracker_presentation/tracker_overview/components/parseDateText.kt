@@ -15,10 +15,10 @@ fun ParseDateText(date: LocalDate):String {
             stringResource(id = R.string.today)
         }
         today.plusDays(1)->{
-            stringResource(id = R.string.yesterday)
+            stringResource(id = R.string.tomorrow)
         }
         today.minusDays(1)->{
-            stringResource(id = R.string.tomorrow)
+            stringResource(id = R.string.yesterday)
         }
         else -> {
             DateTimeFormatter.ofPattern("dd LLLL").format(date)

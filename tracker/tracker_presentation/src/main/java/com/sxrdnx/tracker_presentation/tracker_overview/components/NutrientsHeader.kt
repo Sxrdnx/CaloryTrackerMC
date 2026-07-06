@@ -1,5 +1,6 @@
 package com.sxrdnx.tracker_presentation.tracker_overview.components
 
+import android.util.Log
 import androidx.compose.animation.core.animateIntAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -27,6 +28,7 @@ import com.example.core_ui.ProteinColor
 import com.sxrdnx.tracker_presentation.components.UnitDisplay
 import com.sxrdnx.tracker_presentation.tracker_overview.TrackerOverviewState
 import com.sxrdnx.core.R
+import com.sxrdnx.core.util.DebugNames
 
 @Composable
 fun NutrientsHeader(
@@ -34,7 +36,8 @@ fun NutrientsHeader(
     modifier: Modifier = Modifier
 ){
     val spacing = LocalSpacing.current
-    val animatedCaloriedCount = animateIntAsState(targetValue = state.totalCalories)
+    val animatedCaloriedCount = animateIntAsState(targetValue = state.totalCalories, label = "")
+    val animatedGoalCalories = animateIntAsState(targetValue = state.caloriesGoal, label = "")
 
     Column(
         modifier = modifier
@@ -72,7 +75,7 @@ fun NutrientsHeader(
                     color = MaterialTheme.colors.onPrimary
                 )
                 UnitDisplay(
-                    amount = animatedCaloriedCount.value,
+                    amount = animatedGoalCalories.value,
                     unit = stringResource(id = R.string.kcal),
                     amountColor = MaterialTheme.colors.onPrimary,
                     amountTextSiZe = 40.sp,
